@@ -6,9 +6,11 @@ import pandas as pd
 import numpy as np
 import requests
 from urllib import parse
-
-import pickle
 import datetime
+import requests
+import os
+import pickle
+from multiprocessing import Pool, cpu_count, Value, Lock
 
 team_dict = {'레알루키즈': 'http://alb.or.kr//s/teams/index.php%3Fid%3Dteams_players%26league%3D%EC%97%B0%ED%95%A9%ED%9A%8C%EC%9E%A5%EA%B8%B0%26sc%3D2%26team%3D%EB%A0%88%EC%95%8C%EB%A3%A8%ED%82%A4%EC%A6%88%26order%3Dxb%26sort%3D%26gyear%3D2022',
  '안양실버': 'http://alb.or.kr/s/teams/index.php?id=teams_players&league=%BF%AC%C7%D5%C8%B8%C0%E5%B1%E2&sc=2&team=%BE%C8%BE%E7%BD%C7%B9%F6&order=xb&sort=&gyear=2024',
